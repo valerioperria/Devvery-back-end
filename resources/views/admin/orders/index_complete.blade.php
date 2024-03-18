@@ -34,7 +34,7 @@
                         <td class="d-none">{{ $order->total_amount }} €</td>
                         <td>
                             <div class="d-flex gap-2 justify-content-center">
-                                <a href="{{ route('admin.orders.show', ['order' => $order->id]) }}"
+                                <a title="Dettagli Ordine" href="{{ route('admin.orders.show', ['order' => $order->id]) }}"
                                     class="btn ms_btn-yellow"><i class="fa-regular fa-eye"></i></a>
                                 <form action="{{ route('admin.order.check', ['order' => $order->id]) }}" method="POST">
                                     @csrf

@@ -38,13 +38,13 @@
                         <td class="d-none">{{ $order->total_amount }} €</td>
                         <td>
                             <div class="d-flex gap-2 justify-content-center">
-                                <a href="{{ route('admin.orders.show', ['order' => $order->id]) }}"
+                                <a title="Dettagli Ordine" href="{{ route('admin.orders.show', ['order' => $order->id]) }}"
                                     class="btn ms_btn-yellow"><i class="fa-regular fa-eye"></i></a>
                                 <form action="{{ route('admin.order.check', ['order' => $order->id]) }}" method="POST">
                                     @csrf
                                     @method('POST')
-                                    <button @disabled($order->status === 1) type="submit"
-                                        class="{{ $order->status === 0 ? 'ms_btn-red' : 'ms_btn-green' }}"><i
+                                    <button title="Segna come completato" @disabled($order->status === 1) type="submit"
+                                        class="ms_btn-dark"><i
                                             class="fa-solid fa-circle-check"></i></button>
                                 </form>
                             </div>

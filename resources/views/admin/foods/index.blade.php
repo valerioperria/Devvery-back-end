@@ -62,18 +62,18 @@
 
                         <div
                             class="d-flex flex-column align-items-end position-absolute gap-2 justify-content-center pe-2 ms_query_for_button">
-                            <a href="{{ route('admin.foods.show', ['food' => $food->id]) }}"
+                            <a title="Dettagli" href="{{ route('admin.foods.show', ['food' => $food->id]) }}"
                                 class="btn ms_btn-dark btn-sm ms_width_icon">
                                 <i class="fa-solid fa-book-open"></i>
                             </a>
-                            <a href="{{ route('admin.foods.edit', ['food' => $food->id]) }}"
+                            <a title="Modifica" href="{{ route('admin.foods.edit', ['food' => $food->id]) }}"
                                 class="btn ms_btn-yellow btn-sm ms_width_icon">
                                 <i class="fa-solid fa-pen"></i>
                             </a>
                             <form action="{{ route('admin.foods.destroy', ['food' => $food->id]) }}" method="POST">
                                 @csrf
                                 @method('DELETE')
-                                <button data-title="{{ $food->name }}"
+                                <button title="Elimina" data-title="{{ $food->name }}"
                                     class="btn ms_btn-red btn-sm delete-btn ms_width_icon" data-bs-toggle="modal"
                                     data-bs-target="#modal-delete" type="submit"><i class="fa-solid fa-trash"></i></button>
                             </form>
